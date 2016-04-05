@@ -8,6 +8,18 @@ const BrowserWindow = electron.BrowserWindow;  // Module to create native browse
 // be closed automatically when the JavaScript object is garbage collected.
 var mainWindow = null;
 
+var menubar = require('menubar');
+
+var mb = menubar({
+  width: 1280,
+  height: 800
+});
+
+mb.on('after-create-window', function ready () {
+  console.log('app is ready')
+  mb.window.loadURL('file://' + __dirname + '/webui/index.html');
+});
+
 // Quit when all windows are closed.
 app.on('window-all-closed', function() {
   // On OS X it is common for applications and their menu bar
@@ -21,19 +33,20 @@ app.on('window-all-closed', function() {
 // initialization and is ready to create browser windows.
 app.on('ready', function() {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 1280, height: 800});
+  mainWindow = new BrowserWindow({width: 1, height: 1});
 
   // and load the index.html of the app.
   mainWindow.loadURL('file://' + __dirname + '/yaaw/index.html');
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
+  mainWindow.hide();
 
-  // Emitted when the window is closed.
-  mainWindow.on('closed', function() {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
-    mainWindow = null;
-  });
+  // // Emitted when the window is closed.
+  // mainWindow.on('closed', function() {
+  //   // Dereference the window object, usually you would store windows
+  //   // in an array if your app supports multi windows, this is the time
+  //   // when you should delete the corresponding element.
+  //   mainWindow = null;
+  // });
 });

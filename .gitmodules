@@ -1,3 +1,6 @@
 [submodule "yaaw"]
 	path = yaaw
 	url = https://MiincGu@github.com/binux/yaaw
+[submodule "webui"]
+	path = webui
+	url = https://MiincGu@github.com/MiincGu/webui-aria2.git
