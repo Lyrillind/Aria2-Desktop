@@ -1,0 +1,17 @@
+{
+  "name": "YAAW-Desktop",
+  "version": "1.0.0",
+  "main": "main.js",
+  "author": "MiincGu",
+  "description": "Desktop Wrapper for YAAW",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MiincGu/YAAW-Desktop"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "electron-packager": "^5.2.1",
+    "gulp": "^3.9.1"
+  }
+}
