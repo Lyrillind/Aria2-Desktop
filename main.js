@@ -24,7 +24,7 @@ app.on('ready', function() {
   mainWindow = new BrowserWindow({width: 1280, height: 800});
 
   // and load the index.html of the app.
-  mainWindow.loadURL('file://' + __dirname + '/webui/index.html');
+  mainWindow.loadURL('file://' + __dirname + '/yaaw/index.html');
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
